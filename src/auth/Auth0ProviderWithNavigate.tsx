@@ -1,5 +1,5 @@
 
-import { AppState, Auth0Provider, useAuth0, User } from "@auth0/auth0-react"
+import { Auth0Provider } from "@auth0/auth0-react"
 import { useNavigate } from "react-router-dom"
 
 type Props={
@@ -17,7 +17,7 @@ const Auth0ProviderWithNavigate=({children}:Props)=>{
     if(!domain || !clientId || !redirectUri || !audience){
         throw new Error("unable to initialise auth")
     }
-    const onRedirectCallback=async (appState?:AppState,user?:User)=>{
+    const onRedirectCallback=async ()=>{
         // const token=await getAccessTokenSilently()
         // console.log("token",token);
         
